@@ -45,14 +45,14 @@ if(isset($_GET["id"])){
 		break;
 
         case "fmt":
-            exec("nohup killall mplayer > /dev/null &");
-            exec("nohup sudo radiko.sh -p FMT > /dev/null &");
+            exec("killall mplayer > /dev/null &");
+            exec("sudo radiko.sh FMT > /dev/null &");
             $_SESSION['broad']="FM TOKYO";
         break;
 
 	    case "fmj":
-	        exec("nohup killall mplayer > /dev/null &");
-            exec("nohup sudo radiko.sh -p FMJ > /dev/null &");
+	        exec("killall mplayer > /dev/null &");
+            exec("sudo radiko.sh FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
 	        break;
 
