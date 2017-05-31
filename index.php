@@ -34,7 +34,7 @@ if(isset($_GET["id"])){
 
         case "play":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p FMJ > /dev/null &");
+            exec("nohup sudo radiko.sh -p FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
             break;
 
@@ -46,25 +46,25 @@ if(isset($_GET["id"])){
 
         case "fmt":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p FMT > /dev/null &");
+            exec("nohup sudo radiko.sh -p FMT > /dev/null &");
             $_SESSION['broad']="FM TOKYO";
         break;
 
 	    case "fmj":
 	        exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p FMJ > /dev/null &");
+            exec("nohup sudo radiko.sh -p FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
 	        break;
 
 	    case "bay":
 	        exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p BAYFM78 > /dev/null &");
+            exec("nohup sudo radiko.sh -p BAYFM78 > /dev/null &");
             $_SESSION['broad']="BAYFM78";
 	        break;
 
 	    case "nac":
 	        exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p NACK5 > /dev/null &");
+            exec("nohup sudo radiko.sh -p NACK5 > /dev/null &");
             $_SESSION['broad']="NACK5";
         	break;
 
