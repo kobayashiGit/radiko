@@ -1,4 +1,6 @@
 <?php
+var_dump( exec('ls') );
+exit;
 session_start();
 
 if(isset($_GET["id"])){
