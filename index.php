@@ -1,10 +1,10 @@
 <?php
 //var_dump( exec('ls', $out, $ret) );
 //print_r( $out );
-print posix_getpwuid(posix_geteuid())['name'];
-exec("sudo radiko.sh FMT",$out);
-print_r($out);
-exit;
+//print posix_getpwuid(posix_geteuid())['name'];
+//exec("sudo radiko.sh FMT",$out);
+//print_r($out);
+//exit;
 session_start();
 
 if(isset($_GET["id"])){
