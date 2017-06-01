@@ -1,5 +1,5 @@
 <?php
-var_dump( exec('ls') );
+var_dump( exec('ls -al') );
 exit;
 session_start();
 
