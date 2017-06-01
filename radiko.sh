@@ -8,7 +8,7 @@ playerurl=http://radiko.jp/apps/js/flash/myplayer-release.swf
 playerfile="/tmp/player.swf"
 keyfile="/tmp/authkey.png"
 
-outdir="/var/www/html/radiko/tmp"
+outdir="/tmp"
 
 if [ $# -le 0 ]; then
   echo "usage : $0 channel_name duration(minuites) [outputdir] [prefix]"

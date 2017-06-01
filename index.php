@@ -2,7 +2,7 @@
 //var_dump( exec('ls', $out, $ret) );
 //print_r( $out );
 //print posix_getpwuid(posix_geteuid())['name'];
-exec("nohup ./rradiko.sh -p FMT > /dev/null &",$out);
+exec("nohup ./radiko.sh -p FMT > /dev/null &",$out);
 print_r($out);
 exit;
 session_start();
