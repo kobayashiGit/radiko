@@ -37,7 +37,7 @@ if(isset($_GET["id"])){
 
         case "play":
             exec("sudo killall mplayer > /dev/null &");
-            exec("sudo radiko.sh -p FMJ > /dev/null &");
+            exec("sudo radiko.sh FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
             break;
 
