@@ -1,8 +1,7 @@
 <?php
-var_dump( exec('ls', $out, $ret) );
-print_r( $out );
-
-exit;
+//var_dump( exec('ls', $out, $ret) );
+//print_r( $out );
+//exit;
 session_start();
 
 if(isset($_GET["id"])){
@@ -37,8 +36,8 @@ if(isset($_GET["id"])){
         break;
 
         case "play":
-            exec("nohup killall mplayer > /dev/null &");
-            exec("nohup sudo radiko.sh -p FMJ > /dev/null &");
+            exec("sudo killall mplayer > /dev/null &");
+            exec("sudo radiko.sh -p FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
             break;
 
