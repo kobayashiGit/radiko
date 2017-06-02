@@ -198,7 +198,7 @@ if(isset($_GET["id"])){
                 </div>
             </div>
 
-            <!-- <p style="margin-top:2em;">縲</p> -->
+            <p style="margin-top:2em;"> </p>
 
             <div class="sidemenu js-sidemenu">
                 <h5>Broadcaster List</h5>
