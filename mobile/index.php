@@ -34,7 +34,7 @@ if(isset($_GET["id"])){
 
         case "play":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup ./radiko.sh -p FMJ > /dev/null &");
+            exec("nohup ./radiko.sh FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
             break;
 
