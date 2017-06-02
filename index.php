@@ -14,23 +14,23 @@ if(isset($_GET["id"])){
 	switch ($id) {
 
         case "vdd":
-        exec("nohup amixer sset PCM 5%+  > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 6dB+  > /dev/null 2>&1");
         break;
 
         case "vds":
-        exec("nohup amixer -c 1 set PCM 2dB- > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 2dB- > /dev/null 2>&1");
         break;
 
         case "def":
-        exec("nohup amixer -c 1 set PCM 30% > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 70% > /dev/null 2>&1");
         break;
 
         case "vus":
-        exec("nohup amixer -c 1 set PCM 2dB+ > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 2dB+ > /dev/null 2>&1");
         break;
 
         case "vuu":
-        exec("nohup amixer -c 1 set PCM 6dB+ > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 6dB+ > /dev/null 2>&1");
         break;
 
         case "max":
