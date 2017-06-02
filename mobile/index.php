@@ -14,7 +14,7 @@ if(isset($_GET["id"])){
         break;
 
         case "def":
-        exec("nohup amixer -c 0 set PCM 30% > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 80% > /dev/null 2>&1");
         break;
 
         case "vus":
