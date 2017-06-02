@@ -66,80 +66,80 @@ if(isset($_GET["id"])){
 
 	    case "bay":
 	        exec("nohup killall mplayer > /dev/null &");
-            exec("nohup sudo radiko.sh -p BAYFM78 > /dev/null &");
+            exec("nohup ./radiko.sh BAYFM78 > /dev/null &");
             $_SESSION['broad']="BAYFM78";
 	        break;
 
 	    case "nac":
 	        exec("nohup killall mplayer > /dev/null &");
-            exec("nohup sudo radiko.sh -p NACK5 > /dev/null &");
+            exec("nohup ./radiko.sh NACK5 > /dev/null &");
             $_SESSION['broad']="NACK5";
         	break;
 
         case "int":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p INT > /dev/null &");
+            exec("nohup ./radiko.sh INT > /dev/null &");
             $_SESSION['broad']="Inter FM";
             break;
 
         case "yfm":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p YFM > /dev/null &");
+            exec("nohup ./radiko.sh YFM > /dev/null &");
             $_SESSION['broad']="FM Yokohama";
             break;
 
         case "rn1":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p RN1 > /dev/null &");
+            exec("nohup ./radiko.sh RN1 > /dev/null &");
             $_SESSION['broad']="Radio NIKKEI 1";
             break;
 
         case "rn2":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p RN2 > /dev/null &");
+            exec("nohup ./radiko.sh RN2 > /dev/null &");
             $_SESSION['broad']="Radio NIKKEI 2";
             break;
 
         case "tbs":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p TBS > /dev/null &");
+            exec("nohup ./radiko.sh TBS > /dev/null &");
             $_SESSION['broad']="TBS Radio";
             break;
 
         case "jor":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p JORF > /dev/null &");
+            exec("nohup ./radiko.sh JORF > /dev/null &");
             $_SESSION['broad']="Radio Nippon";
             break;
 
         case "qrr":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p QRR > /dev/null &");
-            $_SESSION['broad']="譁�喧謾ｾ騾� AM1134";
+            exec("nohup ./radiko.sh QRR > /dev/null &");
+            $_SESSION['broad']="文化放送 AM1134";
             break;
 
         case "lfr":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash radiko.sh -p LFR > /dev/null &");
-            $_SESSION['broad']="繝九ャ繝昴Φ謾ｾ騾� AM1242";
+            exec("nohup ./radiko.sh LFR > /dev/null &");
+            $_SESSION['broad']="ニッポン放送 AM1242";
             break;
 
         case "nfs":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash rajiru.sh -p FM_SENDAI > /dev/null &");
-            $_SESSION['broad']="NHK FM莉吝床";
+            exec("nohup ./radiko.sh FM_SENDAI > /dev/null &");
+            $_SESSION['broad']="NHK FM仙台";
             break;
 
         case "ns1":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash rajiru.sh -p NHK1_SENDAI > /dev/null &");
-            $_SESSION['broad']="NHK莉吝床隨ｬ�第叛騾�";
+            exec("nohup ./radiko.sh NHK1_SENDAI > /dev/null &");
+            $_SESSION['broad']="NHK仙台第1";
             break;
 
         case "n2":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup /bin/bash rajiru.sh -p NHK2 > /dev/null &");
-            $_SESSION['broad']="NHK隨ｬ�呈叛騾�";
+            exec("nohup ./radiko.sh -p NHK2 > /dev/null &");
+            $_SESSION['broad']="NHK第2放送";
             break;
 
     }
@@ -187,11 +187,11 @@ if(isset($_GET["id"])){
                 <a href="index.php?id=rn2">Radio NIKKEI 2</a>
                 <a href="index.php?id=tbs">TBS Radio</a>
                 <a href="index.php?id=jor">Radio Nippon</a>
-                <a href="index.php?id=qrr">譁�喧謾ｾ騾� AM1134</a>
-                <a href="index.php?id=lfr">繝九ャ繝昴Φ謾ｾ騾� AM1242</a>
+                <a href="index.php?id=qrr">文化放送 AM1134</a>
+                <a href="index.php?id=lfr">ニッポン放送 AM1242</a>
                 <a href="index.php?id=nfs">NHK FM SENDAI</a>
-                <a href="index.php?id=ns1">NHK莉吝床隨ｬ�第叛騾�</a>
-                <a href="index.php?id=n2">NHK隨ｬ�呈叛騾�</a>
+                <a href="index.php?id=ns1">NHK仙台第1</a>
+                <a href="index.php?id=n2">NHK第2放送</a>
             </div>
         </div>
 
