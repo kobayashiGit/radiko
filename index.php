@@ -41,8 +41,8 @@ if(isset($_GET["id"])){
         break;
 
         case "play":
-            exec("sudo killall mplayer > /dev/null &");
-            exec("sudo radiko.sh FMJ > /dev/null &");
+            exec("nohup killall mplayer > /dev/null &");
+            exec("nohup ./radiko.sh FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
             break;
 
@@ -60,7 +60,7 @@ if(isset($_GET["id"])){
 
 	    case "fmj":
 	        exec("nohup killall mplayer > /dev/null &");
-            exec("./radiko.sh FMJ > /dev/null &");
+            exec("nohup ./radiko.sh FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
 	        break;
 
