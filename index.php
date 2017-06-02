@@ -2,7 +2,8 @@
 //var_dump( exec('ls', $out, $ret) );
 //print_r( $out );
 //print posix_getpwuid(posix_geteuid())['name'];
-exec("./radiko.sh FMT",$out);
+//exec("./radiko.sh FMT",$out);
+exec("play_radiko.sh FMT",$out);
 print_r($out);
 exit;
 session_start();
