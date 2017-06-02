@@ -1,12 +1,4 @@
 <?php
-//var_dump( exec('ls', $out, $ret) );
-//print_r( $out );
-//print posix_getpwuid(posix_geteuid())['name'];
-//exec("./radiko.sh FMT",$out);
-//exec("/usr/bin/sudo -u pi  play_radiko.sh FMT",$out);
-//print_r($out);
-//exit;
-
 session_start();
 
 if(isset($_GET["id"])){
@@ -14,7 +6,7 @@ if(isset($_GET["id"])){
 	switch ($id) {
 
         case "vdd":
-        exec("nohup amixer -c 0 set PCM 6dB-  > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 6dB- > /dev/null 2>&1");
         break;
 
         case "vds":
@@ -22,7 +14,7 @@ if(isset($_GET["id"])){
         break;
 
         case "def":
-        exec("nohup amixer -c 0 set PCM 80% > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 30% > /dev/null 2>&1");
         break;
 
         case "vus":
@@ -36,13 +28,13 @@ if(isset($_GET["id"])){
         case "max":
         exec("nohup killall mplayer > /dev/null &");
         exec("nohup sleep 1 > /dev/null 2>&1");
-        exec("nohup amixer -c 1 set PCM 100% > /dev/null 2>&1");
+        exec("nohup amixer -c 0 set PCM 100% > /dev/null 2>&1");
         $_SESSION['broad']="MoOde Music Player";
         break;
 
         case "play":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup ./radiko.sh FMJ > /dev/null &");
+            exec("nohup ./radiko.sh -p FMJ > /dev/null &");
             $_SESSION['broad']="J-WAVE";
             break;
 
@@ -138,7 +130,7 @@ if(isset($_GET["id"])){
 
         case "n2":
             exec("nohup killall mplayer > /dev/null &");
-            exec("nohup ./radiko.sh -p NHK2 > /dev/null &");
+            exec("nohup ./radiko.sh NHK2 > /dev/null &");
             $_SESSION['broad']="NHK第2放送";
             break;
 
@@ -174,7 +166,40 @@ if(isset($_GET["id"])){
 <div class="container">
     <div class="row">
 
-        <div class="col md-4">
+        <div class="col md-4 float-center"></div>
+
+        <div class="col md-4 float-center">
+            <p style="margin-top:2em;"></p>
+            <div class="broadcast">
+                <a href="http://moode:8080/mobile/"><h5>Broadcast</a>
+                <span style="margin-right:10px;"></span>
+                <?php echo $broad; ?></h5>
+            </div>
+            <p style="margin-top:1em;"></p>
+            <span style="margin-right: 5px;"></span>
+
+            <a class="btn btn-empty btn-error" href="index.php?id=stop">STOP</a>
+            <a class="btn btn-empty btn-success" href="index.php?id=play">PLAY</a>
+
+            <p style="margin-top:1em;"></p>
+            <a class="btn btn-empty btn-sm btn-warning" href="index.php?id=vds">- 2dB</a>
+            <a class="btn btn-empty btn-sm btn-light" href="index.php?id=def">def</a>
+            <a class="btn btn-empty btn-sm btn-success" href="index.php?id=vus">+ 2dB</a>
+            <a class="btn btn-empty btn-sm btn-error" href="index.php?id=vdd">- 6dB</a>
+            <a class="btn btn-empty btn-sm btn-light" href="index.php?id=def">def</a>
+            <a class="btn btn-empty btn-sm" href="index.php?id=vuu">+ 6dB</a>
+
+            <div class="font-icon-list col md-2 sm-3 xs-6">
+                <div class="font-icon-detail">
+                    <a href="index.php?id=max">
+                    <span class="icon-volume"></span>
+                    <div>MAX</div>
+                    </a>
+                </div>
+            </div>
+
+            <p style="margin-top:2em;">縲</p>
+
             <div class="sidemenu js-sidemenu">
                 <h5>Broadcaster List</h5>
                 <a href="index.php?id=fmt">TOKYO FM</a>
@@ -189,45 +214,11 @@ if(isset($_GET["id"])){
                 <a href="index.php?id=jor">Radio Nippon</a>
                 <a href="index.php?id=qrr">文化放送 AM1134</a>
                 <a href="index.php?id=lfr">ニッポン放送 AM1242</a>
-                <a href="index.php?id=nfs">NHK FM SENDAI</a>
-                <a href="index.php?id=ns1">NHK仙台第1</a>
-                <a href="index.php?id=n2">NHK第2放送</a>
             </div>
         </div>
 
-        <div class="col md-8 float-right">
-            <p style="margin-top:2em;"></p>
-            <div class="broadcast">
-                <a href="http://moode:8080/"><h5>Broadcast</a>
-                <span style="margin-right:10px;"></span>
-                <?php echo $broad; ?></h5>
-            </div>
-            <p style="margin-top:1em;"></p>
-            <span style="margin-right: 20px;"></span>
+<div class="col md-4"></div>
 
-            <a class="btn btn-empty btn-lg btn-error" href="index.php?id=stop">STOP</a>
-            <a class="btn btn-empty btn-lg btn-success" href="index.php?id=play">PLAY</a>
-
-            <p style="margin-top:3em;"></p>
-            <a class="btn btn-empty btn-sm btn-error" href="index.php?id=vdd">- 6dB</a>
-            <a class="btn btn-empty btn-sm btn-warning" href="index.php?id=vds">- 2dB</a>
-            <a class="btn btn-empty btn-sm btn-light" href="index.php?id=def">default</a>
-            <a class="btn btn-empty btn-sm btn-success" href="index.php?id=vus">+ 2dB</a>
-            <a class="btn btn-empty btn-sm" href="index.php?id=vuu">+ 6dB</a>
-
-<!--
-            <p style="margin-top:1em;"></p>
-            <div class="font-icon-list col md-2 sm-3 xs-6">
-                <div class="font-icon-detail">
-                    <a href="index.php?id=max">
-                    <span class="icon-volume"></span>
-                    <div>MAX</div>
-                </div>
-            </div>
-            <p style="margin-top:40px;"></p>
-            <h5>MoOde</h5></a>
--->
-        </div>
 
     </div>
 </div>
