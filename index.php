@@ -14,7 +14,7 @@ if(isset($_GET["id"])){
 	switch ($id) {
 
         case "vdd":
-        exec("nohup amixer -c 1 set PCM 10%  > /dev/null 2>&1");
+        exec("nohup amixer sset PCM 5%+  > /dev/null 2>&1");
         break;
 
         case "vds":
